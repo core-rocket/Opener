@@ -69,6 +69,7 @@ PROJECT_LOGO           =
 # left blank the current directory will be used.
 
 # OUTPUT_DIRECTORY       = C:/Users/NEC-PCuser/Documents/Arduino/libraries/Opener/docs
+OUTPUT_DIRECTORY       = /docs
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create up to 4096
 # sub-directories (in 2 levels) under the output directory of each output format
