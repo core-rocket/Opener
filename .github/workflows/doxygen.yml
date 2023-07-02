@@ -19,6 +19,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: doxygen-action
         uses: mattnotmitt/doxygen-action@v1.9.5
         with:
