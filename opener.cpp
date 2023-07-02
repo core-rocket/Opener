@@ -1,11 +1,11 @@
 /**
- * @file opener/opener.cpp
+ * @file Opener/Opener.cpp
  * @brief ハイブリッドロケットの開放判定を行うライブラリ
  * @details ハイブリッドロケットの開放判定を行うライブラリ
  **/
 
-#include "opener.h"
-#include <stdlib.h>
+#include <Arduino.h>
+#include "Opener.h"
 
 int arraycmp(const void *p1, const void *p2)
 {

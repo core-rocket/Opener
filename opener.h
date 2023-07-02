@@ -1,5 +1,5 @@
 /**
- * @file opener/opener.h
+ * @file Opener/Opener.h
  * @subpage opener_class
  * @brief ハイブリッドロケットの開放機構の制御を行うライブラリ
  * @details ハイブリッドロケットの開放機構の制御を行うライブラリ
@@ -8,6 +8,7 @@
 #ifndef OPENER_H
 #define OPENER_H
 
+#include <Arduino.h>
 //#include "pico/stdlib.h"
 
 int arraycmp(const void *p1, const void *p2);
@@ -132,6 +133,7 @@ public:
             ALT_oversampling_count = shinsasyo_ALT_oversampling_count;
             ALT_threshold_count = shinsasyo_ALT_threshold_count;
         }
+        goCHECK();
     }
 
     enum MODE
