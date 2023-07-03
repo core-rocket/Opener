@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lift_5foff_5fjudge_60',['LIFT_OFF_JUDGE',['../classOPENER.html#a48df104d099207a99950721354d69644',1,'OPENER']]]
+  ['lift_5foff_5fjudge_64',['LIFT_OFF_JUDGE',['../classOPENER.html#a48df104d099207a99950721354d69644',1,'OPENER']]]
 ];
