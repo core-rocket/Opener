@@ -1,4 +1,4 @@
-# Opener
+# Flight Detection and Parachute Deployment System for Hybrid Rockets
 
 ## 状態遷移
 
