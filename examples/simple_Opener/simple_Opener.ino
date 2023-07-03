@@ -10,14 +10,6 @@ void setup()
 
 void loop()
 {
-  // テレメトリ送信に関するブロック
-  {
-    // 以下の構造体から状態を読み出し可能
-    //   opener.mode
-    //   opener.lift_off_judge
-    //   opener.open_judge
-  }
-
   // コマンド受信に関するブロック
   {
     // 開放禁止コマンドを受信したとき，
@@ -50,6 +42,19 @@ void loop()
     // 高度差を利用するため，射点で0mである必要はない．
     float altitude_m = 0;
 
-    opener.opener_100Hz(acceleration_mss, altitude_m);
+    // 100Hzのセンサーデータの中央値を取り，10Hzで判定を行う．
+    // 判定が行われたときtrueを返す．
+    // 開放判定を行うと内部で open() を呼び出して開放機構を開く．
+    bool new_judge = opener.opener_100Hz(acceleration_mss, altitude_m);
+
+    if (new_judge){
+      // テレメトリ送信に関するブロック
+      {
+        // 以下の構造体から状態を読み出し可能
+        //   opener.mode
+        //   opener.lift_off_judge
+        //   opener.open_judge
+      }
+    }
   }
 }
