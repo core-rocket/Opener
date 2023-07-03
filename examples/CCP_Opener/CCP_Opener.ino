@@ -19,6 +19,8 @@ void setup()
 
   // CAN
   CCP.begin();
+
+  opener.init();
 }
 
 void loop()
