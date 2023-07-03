@@ -14,16 +14,33 @@
 ### 開放判定
 ![](doc/open.png)
 
-## 設計思想
-### 状態遷移の設計
-
-### ソフトウェアの実装
-
 ## 使用方法
+* Openerクラスを継承したクラス(`myOpener`)の作成
+    * シミュレーション結果に応じて`protected`のパラメータを設定する．
+    * `open()`，`close()`の関数を実装する．ハードウェアで必要であれば`init()`も実装．
+* myOpenerインスタンスの利用
+    * `opener_100Hz()`を100Hzで呼び出してセンサーデータを渡すと，自動的に判定が行われ`open()`が呼び出される．
+    * 離床から開放までの時間のシム値に関しては，風向風速や射角に依存し直前にアップリンクする必要があるため，`open_threshold_time_ms()`で値を上書きできる．
+    * その他のコマンドについてはサンプルコードを参照．
+
 
 [Openerクラスのドキュメント](https://core-rocket.github.io/Opener/classOPENER.html)
 
 ### サンプルコード
 https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55
 
+[CORE CAN Protocol](https://github.com/core-rocket/CCP)に対応したサンプルコードは[examples/CCP_Opener](https://github.com/core-rocket/Opener/blob/main/examples/CCP_Opener/CCP_Opener.ino)にあります．
+
 ### パラメータの設定
+
+
+## 設計思想
+
+### 状態遷移の設計
+### ソフトウェアの実装
+
+<!--
+
+public,private,protectedの説明
+ゲッターとセッター
+-->
