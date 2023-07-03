@@ -65,11 +65,39 @@ $(function() {
 <div class="title">Opener </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a href="https://core-rocket.github.io/Opener/classOPENER.html">Openerクラスのドキュメント</a></p>
-<h1><a class="anchor" id="autotoc_md1"></a>
+<div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
 状態遷移</h1>
-<h1><a class="anchor" id="autotoc_md2"></a>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">フェーズ定義   </th><th class="markdownTableHeadCenter">概要   </th><th class="markdownTableHeadCenter">該当フェーズへの移行条件    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">CHECK   </td><td class="markdownTableBodyCenter">打上げ前の動作確認   </td><td class="markdownTableBodyCenter">起動時・移行コマンドの受信    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">READY   </td><td class="markdownTableBodyCenter">点火待機   </td><td class="markdownTableBodyCenter">(キースイッチ・)移行コマンドの受信    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">FLIGHT   </td><td class="markdownTableBodyCenter">点火後   </td><td class="markdownTableBodyCenter">離床判定    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter">OPENED   </td><td class="markdownTableBodyCenter">減速機構作動後   </td><td class="markdownTableBodyCenter">開放判定   </td></tr>
+</table>
+<h2><a class="anchor" id="autotoc_md2"></a>
+離床判定</h2>
+<p><img src="doc/lift_off.png" alt="" class="inline"/> </p>
+<h2><a class="anchor" id="autotoc_md3"></a>
+開放判定</h2>
+<p><img src="doc/open.png" alt="" class="inline"/></p>
+<h1><a class="anchor" id="autotoc_md4"></a>
 設計思想</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+状態遷移の設計</h2>
+<h2><a class="anchor" id="autotoc_md6"></a>
+ソフトウェアの実装</h2>
+<h1><a class="anchor" id="autotoc_md7"></a>
+使用方法</h1>
+<p><a href="https://core-rocket.github.io/Opener/classOPENER.html">Openerクラスのドキュメント</a></p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+サンプルコード</h2>
+<h2><a class="anchor" id="autotoc_md9"></a>
+パラメータの設定</h2>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
