@@ -24,5 +24,6 @@
 [Openerクラスのドキュメント](https://core-rocket.github.io/Opener/classOPENER.html)
 
 ### サンプルコード
+https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55
 
 ### パラメータの設定
