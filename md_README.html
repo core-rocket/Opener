@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Opener: Opener</title>
+<title>Opener: Flight Detection and Parachute Deployment System for Hybrid Rockets</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,7 +62,7 @@ $(function() {
 </div><!-- top -->
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">Opener </div>  </div>
+<div class="title">Flight Detection and Parachute Deployment System for Hybrid Rockets </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md1"></a>
@@ -86,19 +86,33 @@ $(function() {
 開放判定</h2>
 <p><img src="doc/open.png" alt="" class="inline"/></p>
 <h1><a class="anchor" id="autotoc_md4"></a>
-設計思想</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
-状態遷移の設計</h2>
-<h2><a class="anchor" id="autotoc_md6"></a>
-ソフトウェアの実装</h2>
-<h1><a class="anchor" id="autotoc_md7"></a>
 使用方法</h1>
+<ul>
+<li>Openerクラスを継承したクラス(<code>myOpener</code>)の作成<ul>
+<li>シミュレーション結果に応じて<code>protected</code>のパラメータを設定する．</li>
+<li><code>open()</code>，<code>close()</code>の関数を実装する．ハードウェアで必要であれば<code>init()</code>も実装．</li>
+</ul>
+</li>
+<li>myOpenerインスタンスの利用<ul>
+<li><code>opener_100Hz()</code>を100Hzで呼び出してセンサーデータを渡すと，自動的に判定が行われ<code>open()</code>が呼び出される．</li>
+<li>離床から開放までの時間のシム値に関しては，風向風速や射角に依存し直前にアップリンクする必要があるため，<code>open_threshold_time_ms()</code>で値を上書きできる．</li>
+<li>その他のコマンドについてはサンプルコードを参照．</li>
+</ul>
+</li>
+</ul>
 <p><a href="https://core-rocket.github.io/Opener/classOPENER.html">Openerクラスのドキュメント</a></p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md5"></a>
 サンプルコード</h2>
 <p><a href="https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55">https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55</a></p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<p><a href="https://github.com/core-rocket/CCP">CORE CAN Protocol</a>に対応したサンプルコードは<a href="https://github.com/core-rocket/Opener/blob/main/examples/CCP_Opener/CCP_Opener.ino">examples/CCP_Opener</a>にあります．</p>
+<h2><a class="anchor" id="autotoc_md6"></a>
 パラメータの設定</h2>
+<h1><a class="anchor" id="autotoc_md7"></a>
+設計思想</h1>
+<h2><a class="anchor" id="autotoc_md8"></a>
+状態遷移の設計</h2>
+<h2><a class="anchor" id="autotoc_md9"></a>
+ソフトウェアの実装</h2>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
