@@ -89,13 +89,13 @@ $(function() {
 使用方法</h1>
 <ul>
 <li>Openerクラスを継承したクラス(<code>myOpener</code>)の作成<ul>
-<li>シミュレーション結果に応じて<code>protected</code>のパラメータを設定する．</li>
+<li>シミュレーション結果を反映して<code>protected</code>のパラメータを設定する．</li>
 <li><code>open()</code>，<code>close()</code>の関数を実装する．ハードウェアで必要であれば<code>init()</code>も実装．</li>
 </ul>
 </li>
 <li>myOpenerインスタンスの利用<ul>
 <li><code>opener_100Hz()</code>を100Hzで呼び出してセンサーデータを渡すと，自動的に判定が行われ<code>open()</code>が呼び出される．</li>
-<li>離床から開放までの時間のシム値に関しては，風向風速や射角に依存し直前にアップリンクする必要があるため，<code>open_threshold_time_ms()</code>で値を上書きできる．</li>
+<li>離床から開放までの時間のシム値に関しては，風向風速や射角に依存し直前にアップリンクする必要があるため<code>open_threshold_time_ms()</code>で値を上書きできる．</li>
 <li>その他のコマンドについてはサンプルコードを参照．</li>
 </ul>
 </li>
@@ -106,13 +106,146 @@ $(function() {
 <p><a href="https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55">https://github.com/core-rocket/Opener/blob/03a7ea9a9297b0590195f735b6251cbbd7a642fb/examples/simple_Opener/simple_Opener.ino#L1-L55</a></p>
 <p><a href="https://github.com/core-rocket/CCP">CORE CAN Protocol</a>に対応したサンプルコードは<a href="https://github.com/core-rocket/Opener/blob/main/examples/CCP_Opener/CCP_Opener.ino">examples/CCP_Opener</a>にあります．</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
-パラメータの設定</h2>
-<h1><a class="anchor" id="autotoc_md7"></a>
-設計思想</h1>
+パラメータの設定[WIP]</h2>
+<p>中身と変数名の対応表</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">目的   </th><th class="markdownTableHeadCenter">値   </th><th class="markdownTableHeadCenter">変数名    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter">燃焼終了判定   </td><td class="markdownTableBodyCenter">燃焼時間   </td><td class="markdownTableBodyCenter"><code>meco_threshold_time_ms</code>   </td></tr>
+</table>
+<ul>
+<li>燃焼時間<ul>
+<li>エンジンの作動時間と同じ値ではなく，マージンを加える</li>
+<li>風向風速射角を変えた中で最短の頂点到達時間より短く設定する</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+搭載計器に対する要求[WIP]</h2>
+<ul>
+<li>ハードウェアの設計<ul>
+<li>無人の小型ロケットであるため，センサー不具合は1つのみと想定している</li>
+<li><a href="#故障の想定">故障の想定</a>を参照し，センサー以外も故障の想定とリスク評価を行うこと</li>
+</ul>
+</li>
+<li>ソフトウェア<ul>
+<li>どちらかのセンサーが故障し通信が不可能になっても<code>opener_100Hz()</code>を100Hzで呼び出すこと</li>
+</ul>
+</li>
+<li>センサー共通<ul>
+<li>少なくとも10Hz以上のOutput Data Rateをもつこと</li>
+<li></li>
+</ul>
+</li>
+<li>加速度センサー<ul>
+<li>ランチャ上での重力加速度が正の値となる向きに取り付けること</li>
+</ul>
+</li>
+<li>気圧センサー<ul>
+<li>予想到達高度の気圧が測定可能なレンジに収まること</li>
+<li>測定高度のばらつきが[]に収まること</li>
+</ul>
+</li>
+<li>無線機<ul>
+<li>アップリンクはチェックサムなどの誤り検出ロジックを実装すること</li>
+</ul>
+</li>
+</ul>
 <h2><a class="anchor" id="autotoc_md8"></a>
+実機での動作試験項目[WIP]</h2>
+<h1><a class="anchor" id="autotoc_md9"></a>
+設計の根拠</h1>
+<h2><a class="anchor" id="autotoc_md10"></a>
 状態遷移の設計</h2>
-<h2><a class="anchor" id="autotoc_md9"></a>
-ソフトウェアの実装</h2>
+<p>「頂点で開放し，地上やエンジンの燃焼中で**絶対に開放しない**こと」</p>
+<h3><a class="anchor" id="autotoc_md11"></a>
+判定の流れ</h3>
+<p><b>READYフェーズ移行 → 離床判定 → 開放判定</b></p>
+<p>高度降下で頂点を検出するだけでは誤判定を防げないため，離床判定と頂点での開放判定の2つを用いる． いかなる理由で離床判定が誤作動した場合でも，地上やエンジンの燃焼中での開放を防ぐロジックとする． ランチャ立ち上げ後に離床判定を許可するため，無線のアップリンクによるREADYフェーズ移行を行う．</p>
+<h3><a class="anchor" id="autotoc_md12"></a>
+故障の想定</h3>
+<p>任意のセンサーが一つだけ故障した場合でも，絶対に危険なタイミングで開放せず，可能な限り冗長系により頂点で開放すること</p><ul>
+<li>測定精度やレンジによる不具合</li>
+<li>瞬間的な外れ値</li>
+<li>継続的な異常値の出力</li>
+<li>通信途絶</li>
+</ul>
+<p>センサーが完全に故障すると，直接繋がったマイコンがハングアップすることがある．これを想定する場合には，センサー用の判定用のマイコンを分離してUARTやCANなどのバスで接続することで通信途絶と同じ状態にするハードウェアでの対策が必要である．ただし，センサー故障によるハングアップと，バス故障やシステムの複雑化とのリスクを比べてハードウェアを設計するべきである．</p>
+<h3><a class="anchor" id="autotoc_md13"></a>
+使用できるセンサー・入力</h3>
+<ul>
+<li>加速度センサー(機軸方向の加速度)<ul>
+<li>離床判定・燃焼終了確認が可能</li>
+<li>燃焼終了後は空気抵抗を除けば0Gであるため，頂点判定は不可能</li>
+</ul>
+</li>
+<li>IMU(姿勢)<ul>
+<li>機体が横向きになることを検知して頂点判定に使用できなくはない</li>
+<li>風に煽られて機体が倒れることがよくあるので，かなり不確実</li>
+</ul>
+</li>
+<li>気圧センサー(高度)<ul>
+<li>離床判定・頂点判定が可能</li>
+<li>前の測定値と比べて高度差を計算して判定に使用するため，測定誤差に注意</li>
+</ul>
+</li>
+<li>ピトー管(対気速度)<ul>
+<li>離床判定が可能</li>
+<li>ノーズに搭載する手間があり，全ロケットに搭載するわけではない</li>
+</ul>
+</li>
+<li>GPS(高度)<ul>
+<li>高度が測定できるが，信頼性が低い</li>
+</ul>
+</li>
+<li>フライトピン<ul>
+<li>離床判定が可能</li>
+<li>チャタリング対策が必要</li>
+<li>機体外部に出るのでオペレーションミスによる誤作動が起こりやすい</li>
+<li>(ダサい)</li>
+</ul>
+</li>
+<li>無線機<ul>
+<li>テレメトリをダウンリンクしてセンサーの動作状態を確認できる</li>
+<li>フライト前にコマンドをアップリンクしてフェーズ以降を行う</li>
+<li>離床後のコマンドは開放の緊急停止のみに使用し，通常時はアップリンクは行わない</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md14"></a>
+センサーデータの処理</h3>
+<ul>
+<li>外れ値検出<ul>
+<li>外れ値の影響を完全に無くすため，平均値ではなく中央値を使って外れ値を弾く</li>
+</ul>
+</li>
+<li>高度→速度算出などの差分計算<ul>
+<li>センサーの値は必ずふらつくので，単に値が大きくなった小さくなったという判定はせず，変化量が閾値より大きい，時間変化が一定以上である，などの判定方法を用いる</li>
+</ul>
+</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md15"></a>
+ロジックの組み方</h3>
+<p>基本的に，事故を防ぐ条件はAND，判定を逃すことを防ぐ条件はOR</p>
+<p>冗長化と，それによるシステムの複雑化によるリスクとのバランスをとる</p>
+<ul>
+<li>離床判定<ul>
+<li>離床判定が誤作動した場合でも危険なタイミングで開放しないためのロジックを開放判定側に組み込むため，離床判定は絶対に誤判定をしないよりも判定を逃さないという方針</li>
+<li>センサーの不具合は任意のセンサー1つという想定のため，加速度と気圧のみで十分とし，フライトピンやピトー管による判定はソフトウェアや動作検証が複雑になるため行わない．</li>
+<li>判定を逃さないという方針から，加速度と気圧のORをとって離床判定を行う．</li>
+</ul>
+</li>
+<li>開放判定<ul>
+<li>燃焼中の開放を防ぐため，頂点到達だけでなく燃焼終了確認をしたうえで開放判定を行う．</li>
+<li>頂点到達は高度降下を基本とし，気圧センサーの不具合に備えて離床判定からのタイマーとのORをとる．</li>
+<li>燃焼終了確認は，離床判定からの燃焼時間タイマーと，慣性飛行を検知する加速度センサーを用いる．安全上の条件であるため，タイマーと加速度のANDをとる．エンジンの推力の加速度だけでなく重力加速度を検知するように閾値を調整することにより，ランチャー上での誤作動も防ぐことができる．</li>
+<li>加速度センサーに不具合が起きた場合，離床判定と燃焼終了確認が誤作動し，さらにタイマーにより頂点到達判定が行われて開放機構が動作するリスクがあるため，これを防ぐために無線のアップリンクによる非常停止を実装する．非常停止無し・頂点到達確認・燃焼終了確認のANDをとって開放判定とする．</li>
+</ul>
+</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md16"></a>
+ソフトウェアの実装[WIP]</h2>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 <!-- start footer part -->
