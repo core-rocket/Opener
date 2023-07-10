@@ -11,7 +11,7 @@ void MY_OPENER::init()
 {
     servo1.attach(SERVO_1);
     servo2.attach(SERVO_2);
-    close();
+    OPENER::init();
 }
 
 void MY_OPENER::open()

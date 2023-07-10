@@ -4,7 +4,7 @@ MY_OPENER opener(OPENER::FM);
 
 void setup()
 {
-  // 開放機構のハードウェアの初期設定(Option)
+  // 初期設定
   opener.init();
 }
 

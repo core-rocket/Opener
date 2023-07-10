@@ -133,7 +133,6 @@ public:
             ALT_oversampling_count = shinsasyo_ALT_oversampling_count;
             ALT_threshold_count = shinsasyo_ALT_threshold_count;
         }
-        goCHECK();
     }
 
     enum MODE
@@ -156,6 +155,9 @@ public:
         //! 高度上昇により離床判定
         ALTSEN
     } lift_off_judge = NONE;
+
+    //! 初期化（myOpenerクラスでオーバーライドするときは必ず OPENER::init() を呼び出すこと）
+    void init();
 
     void goCHECK();
     void goREADY();

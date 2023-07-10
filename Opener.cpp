@@ -33,6 +33,11 @@ float get_median(int n, float a[])
     }
 }
 
+void OPENER::init()
+{
+    goCHECK();
+}
+
 uint32_t OPENER::get_time_ms()
 {
     // for raspberry pi pico SDK
