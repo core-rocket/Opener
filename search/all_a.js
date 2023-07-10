@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['set_5fopen_5fthreshold_5ftime_5fms_35',['set_open_threshold_time_ms',['../classOPENER.html#a8f857f784b8177ddc6980344715c5771',1,'OPENER']]],
-  ['setting_36',['SETTING',['../classOPENER.html#ad9bdea1dc929cd5b1b370ae8e75fd644',1,'OPENER']]],
-  ['shinsasyo_37',['SHINSASYO',['../classOPENER.html#ad9bdea1dc929cd5b1b370ae8e75fd644a78d3fc5fe43d8cf7f97be0dd08ffbfe2',1,'OPENER']]]
+  ['ready_35',['READY',['../classOPENER.html#aa5330d5bd161dfbcdd49c21f96f02907a02cf5f110e81def4b6ea71375b8a2500',1,'OPENER']]]
 ];

@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['period_5f100hz_5fms_31',['period_100Hz_ms',['../classMY__OPENER.html#ac4f56b3c0cff2cfe89e07d81f67cc4d5',1,'MY_OPENER::period_100Hz_ms()'],['../classOPENER.html#a8f6dec1137660612bd621b8996239ab6',1,'OPENER::period_100Hz_ms()']]],
-  ['period_5f10hz_5fms_32',['period_10Hz_ms',['../classMY__OPENER.html#a314ab9eecadbc9a79346a39f2111a5c4',1,'MY_OPENER::period_10Hz_ms()'],['../classOPENER.html#ae2cfd0ef121bc39081735c88254ab569',1,'OPENER::period_10Hz_ms()']]],
-  ['prohibitopen_33',['prohibitOpen',['../classOPENER.html#ad077df2dac5b5100edb99a5e78290072',1,'OPENER']]]
+  ['open_22',['open',['../classMY__OPENER.html#a77454c83d4907fd8eb14136f37f459ad',1,'MY_OPENER::open()'],['../classMY__OPENER.html#a77454c83d4907fd8eb14136f37f459ad',1,'MY_OPENER::open()'],['../classOPENER.html#a0aeb2add678be8812bf371923efdff8f',1,'OPENER::open()']]],
+  ['open_5fthreshold_5fac_5fmss_23',['open_threshold_ac_mss',['../classMY__OPENER.html#ad00a8ab37f4761a6b93149feca16aa77',1,'MY_OPENER::open_threshold_ac_mss()'],['../classOPENER.html#ae4d83a1804f316d7586c1e1df9e4ced0',1,'OPENER::open_threshold_ac_mss()']]],
+  ['open_5fthreshold_5faltitude_5fm_24',['open_threshold_altitude_m',['../classMY__OPENER.html#a049fd712480e1c5b46d8fd483bc0b804',1,'MY_OPENER::open_threshold_altitude_m()'],['../classOPENER.html#a5a8fd8a34df13c91d7e5106d45ff0ed1',1,'OPENER::open_threshold_altitude_m()']]],
+  ['open_5fthreshold_5ftime_5fms_25',['open_threshold_time_ms',['../classMY__OPENER.html#a8ddce5e7ef7f18ac3e1c7008ccf42c64',1,'MY_OPENER::open_threshold_time_ms()'],['../classOPENER.html#a353894017426e0415404a33b98c70ffc',1,'OPENER::open_threshold_time_ms()']]],
+  ['open_5ftime_5fms_26',['open_time_ms',['../classOPENER.html#ada9eeb32f3fd7518296a9e92357de83e',1,'OPENER']]],
+  ['opened_27',['OPENED',['../classOPENER.html#aa5330d5bd161dfbcdd49c21f96f02907af2a1150dee1a32dea013d2acef7b8600',1,'OPENER']]],
+  ['opener_28',['OPENER',['../classOPENER.html',1,'OPENER'],['../classOPENER.html#a348bdfb2b4869977bfcbcbf77844b732',1,'OPENER::OPENER()']]],
+  ['opener_2ecpp_29',['Opener.cpp',['../Opener_8cpp.html',1,'']]],
+  ['opener_2eh_30',['Opener.h',['../Opener_8h.html',1,'']]],
+  ['opener_5f100hz_31',['opener_100Hz',['../classOPENER.html#a91286371b0d94ba3d9a0aef991f69b31',1,'OPENER']]]
 ];

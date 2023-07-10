@@ -90,7 +90,8 @@ $(function() {
 <ul>
 <li>Openerクラスを継承したクラス(<code>myOpener</code>)の作成<ul>
 <li>シミュレーション結果を反映して<code>protected</code>のパラメータを設定する．</li>
-<li><code>open()</code>，<code>close()</code>の関数を実装する．ハードウェアで必要であれば<code>init()</code>も実装．</li>
+<li><code>open()</code>，<code>close()</code>の関数を実装する．</li>
+<li>ハードウェアで必要な初期化があれば<code>init()</code>を実装し，その中で<code><a class="el" href="classOPENER.html#a088850cc122f7f630c3066eecc4a2e21" title="初期化（myOpenerクラスでオーバーライドするときは必ず OPENER::init() を呼び出すこと）">OPENER::init()</a></code>を呼び出す．</li>
 </ul>
 </li>
 <li>myOpenerインスタンスの利用<ul>
