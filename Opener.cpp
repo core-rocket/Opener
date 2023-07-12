@@ -275,3 +275,12 @@ void OPENER::set_open_threshold_time_ms(uint32_t _open_threshold_time_ms)
 uint32_t OPENER::get_open_threshold_time_ms(){
     return open_threshold_time_ms;
 }
+
+/*!
+ * @brief  燃焼終了のタイマーの秒数を取得する．
+ * @return 離床判定後，燃焼中と判断し開放判定を行わない時間[ms]
+ */
+uint32_t OPENER::get_meco_time_ms()
+{
+    return meco_threshold_time_ms;
+}

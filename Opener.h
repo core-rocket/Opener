@@ -173,6 +173,8 @@ public:
     void set_open_threshold_time_ms(uint32_t _open_threshold_time_ms);
     uint32_t get_open_threshold_time_ms();
 
+    uint32_t get_meco_time_ms();
+
     //! 離床したと推定される時刻(離床判定が行われた時刻ではない)
     uint32_t lift_off_time_ms;
     //! 実際に開放した時刻
