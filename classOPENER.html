@@ -109,11 +109,11 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a348bdfb2b4869977bfcbcbf77844b732"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a348bdfb2b4869977bfcbcbf77844b732">OPENER</a> (<a class="el" href="classOPENER.html#ad9bdea1dc929cd5b1b370ae8e75fd644">SETTING</a> _setting)</td></tr>
-<tr class="separator:a348bdfb2b4869977bfcbcbf77844b732"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a088850cc122f7f630c3066eecc4a2e21"><td class="memItemLeft" align="right" valign="top"><a id="a088850cc122f7f630c3066eecc4a2e21"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a088850cc122f7f630c3066eecc4a2e21">init</a> ()</td></tr>
-<tr class="memdesc:a088850cc122f7f630c3066eecc4a2e21"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化（myOpenerクラスでオーバーライドするときは必ず <a class="el" href="classOPENER.html#a088850cc122f7f630c3066eecc4a2e21" title="初期化（myOpenerクラスでオーバーライドするときは必ず OPENER::init() を呼び出すこと）">OPENER::init()</a> を呼び出すこと） <br /></td></tr>
+<tr class="memitem:a609ac9fbc0a305438789b08b50d5b95f"><td class="memItemLeft" align="right" valign="top"><a id="a609ac9fbc0a305438789b08b50d5b95f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a609ac9fbc0a305438789b08b50d5b95f">switch_parameter</a> (<a class="el" href="classOPENER.html#ad9bdea1dc929cd5b1b370ae8e75fd644">SETTING</a> setting)</td></tr>
+<tr class="memdesc:a609ac9fbc0a305438789b08b50d5b95f"><td class="mdescLeft">&#160;</td><td class="mdescRight">FMと審査書で閾値を切り替える <br /></td></tr>
+<tr class="separator:a609ac9fbc0a305438789b08b50d5b95f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a088850cc122f7f630c3066eecc4a2e21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a088850cc122f7f630c3066eecc4a2e21">init</a> ()</td></tr>
 <tr class="separator:a088850cc122f7f630c3066eecc4a2e21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa7fb1ef669c845be2e5c1d202a9f805"><td class="memItemLeft" align="right" valign="top"><a id="afa7fb1ef669c845be2e5c1d202a9f805"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#afa7fb1ef669c845be2e5c1d202a9f805">goCHECK</a> ()</td></tr>
@@ -185,30 +185,38 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a5a8fd8a34df13c91d7e5106d45ff0ed1"><td class="memItemLeft" align="right" valign="top"><a id="a5a8fd8a34df13c91d7e5106d45ff0ed1"></a>
-const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a5a8fd8a34df13c91d7e5106d45ff0ed1">open_threshold_altitude_m</a> = 0.5</td></tr>
-<tr class="memdesc:a5a8fd8a34df13c91d7e5106d45ff0ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点判定に使われる，0.1秒間の高度変化の閾値 <br /></td></tr>
-<tr class="separator:a5a8fd8a34df13c91d7e5106d45ff0ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4d83a1804f316d7586c1e1df9e4ced0"><td class="memItemLeft" align="right" valign="top"><a id="ae4d83a1804f316d7586c1e1df9e4ced0"></a>
-const float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#ae4d83a1804f316d7586c1e1df9e4ced0">open_threshold_ac_mss</a> = 5</td></tr>
-<tr class="memdesc:ae4d83a1804f316d7586c1e1df9e4ced0"><td class="mdescLeft">&#160;</td><td class="mdescRight">燃焼終了に使われる，加速度の閾値 <br /></td></tr>
-<tr class="separator:ae4d83a1804f316d7586c1e1df9e4ced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2cfd0ef121bc39081735c88254ab569"><td class="memItemLeft" align="right" valign="top"><a id="ae2cfd0ef121bc39081735c88254ab569"></a>
-const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#ae2cfd0ef121bc39081735c88254ab569">period_10Hz_ms</a> = 150</td></tr>
-<tr class="memdesc:ae2cfd0ef121bc39081735c88254ab569"><td class="mdescLeft">&#160;</td><td class="mdescRight">opener_10Hz()が適切なタイミングで呼ばれているかの判定に使われる，10Hzの周期 <br /></td></tr>
-<tr class="separator:ae2cfd0ef121bc39081735c88254ab569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f6dec1137660612bd621b8996239ab6"><td class="memItemLeft" align="right" valign="top"><a id="a8f6dec1137660612bd621b8996239ab6"></a>
-const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a8f6dec1137660612bd621b8996239ab6">period_100Hz_ms</a> = 20</td></tr>
-<tr class="memdesc:a8f6dec1137660612bd621b8996239ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classOPENER.html#a91286371b0d94ba3d9a0aef991f69b31" title="100Hzで呼び出す必要がある関数">opener_100Hz()</a>が適切なタイミングで呼ばれているかの判定に使われる，100Hzの周期 <br /></td></tr>
-<tr class="separator:a8f6dec1137660612bd621b8996239ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c5093a41b33b31cbda1213f9d3e67f7"><td class="memItemLeft" align="right" valign="top"><a id="a5c5093a41b33b31cbda1213f9d3e67f7"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a5c5093a41b33b31cbda1213f9d3e67f7">ACC_threshold_count</a> = 5</td></tr>
-<tr class="memdesc:a5c5093a41b33b31cbda1213f9d3e67f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">閾値以上の加速度が何回連続したときに離床判定・燃焼終了判定を行うかという回数 <br /></td></tr>
-<tr class="separator:a5c5093a41b33b31cbda1213f9d3e67f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a3986c97379e987773e274bad09616f"><td class="memItemLeft" align="right" valign="top"><a id="a8a3986c97379e987773e274bad09616f"></a>
-const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a8a3986c97379e987773e274bad09616f">flight_judgement_duration_ms</a> = <a class="el" href="classOPENER.html#a5c5093a41b33b31cbda1213f9d3e67f7">ACC_threshold_count</a> * 100</td></tr>
-<tr class="memdesc:a8a3986c97379e987773e274bad09616f"><td class="mdescLeft">&#160;</td><td class="mdescRight">離床判定にかかる時間 <br /></td></tr>
-<tr class="separator:a8a3986c97379e987773e274bad09616f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afafbbd6b99ca8e5e951b20e79f9afd9b"><td class="memItemLeft" align="right" valign="top"><a id="afafbbd6b99ca8e5e951b20e79f9afd9b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#afafbbd6b99ca8e5e951b20e79f9afd9b">open_threshold_altitude_m</a> = 0.5</td></tr>
+<tr class="memdesc:afafbbd6b99ca8e5e951b20e79f9afd9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">頂点判定に使われる，0.1秒間の高度変化の閾値 <br /></td></tr>
+<tr class="separator:afafbbd6b99ca8e5e951b20e79f9afd9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afad156f730f8b78098bc7c4908bcaca5"><td class="memItemLeft" align="right" valign="top"><a id="afad156f730f8b78098bc7c4908bcaca5"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#afad156f730f8b78098bc7c4908bcaca5">open_threshold_ac_mss</a> = 7</td></tr>
+<tr class="memdesc:afad156f730f8b78098bc7c4908bcaca5"><td class="mdescLeft">&#160;</td><td class="mdescRight">燃焼終了に使われる，加速度の閾値 <br /></td></tr>
+<tr class="separator:afad156f730f8b78098bc7c4908bcaca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215434373a0982216306569d9c8b8d29"><td class="memItemLeft" align="right" valign="top"><a id="a215434373a0982216306569d9c8b8d29"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a215434373a0982216306569d9c8b8d29">period_10Hz_ms</a> = 150</td></tr>
+<tr class="memdesc:a215434373a0982216306569d9c8b8d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">opener_10Hz()が適切なタイミングで呼ばれているかの判定に使われる，10Hzの周期 <br /></td></tr>
+<tr class="separator:a215434373a0982216306569d9c8b8d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa84e7ad067782fd1dce42986edc42e63"><td class="memItemLeft" align="right" valign="top"><a id="aa84e7ad067782fd1dce42986edc42e63"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#aa84e7ad067782fd1dce42986edc42e63">period_100Hz_ms</a> = 20</td></tr>
+<tr class="memdesc:aa84e7ad067782fd1dce42986edc42e63"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classOPENER.html#a91286371b0d94ba3d9a0aef991f69b31" title="100Hzで呼び出す必要がある関数">opener_100Hz()</a>が適切なタイミングで呼ばれているかの判定に使われる，100Hzの周期 <br /></td></tr>
+<tr class="separator:aa84e7ad067782fd1dce42986edc42e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414cb05db26afa35069568632edf12ae"><td class="memItemLeft" align="right" valign="top"><a id="a414cb05db26afa35069568632edf12ae"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a414cb05db26afa35069568632edf12ae">ACC_threshold_count</a> = 5</td></tr>
+<tr class="memdesc:a414cb05db26afa35069568632edf12ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">閾値以上の加速度が何回連続したときに離床判定・燃焼終了判定を行うかという回数 <br /></td></tr>
+<tr class="separator:a414cb05db26afa35069568632edf12ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a841b2e21a2c9245ec647e559ad0c160d"><td class="memItemLeft" align="right" valign="top"><a id="a841b2e21a2c9245ec647e559ad0c160d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a841b2e21a2c9245ec647e559ad0c160d">flight_judgement_duration_ms</a> = <a class="el" href="classOPENER.html#a414cb05db26afa35069568632edf12ae">ACC_threshold_count</a> * 100</td></tr>
+<tr class="memdesc:a841b2e21a2c9245ec647e559ad0c160d"><td class="mdescLeft">&#160;</td><td class="mdescRight">離床判定にかかる時間 <br /></td></tr>
+<tr class="separator:a841b2e21a2c9245ec647e559ad0c160d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e93f4777c8a60bc855beb28bb9aa70"><td class="memItemLeft" align="right" valign="top"><a id="a79e93f4777c8a60bc855beb28bb9aa70"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a79e93f4777c8a60bc855beb28bb9aa70">meco_threshold_time_ms</a> = 12000</td></tr>
+<tr class="memdesc:a79e93f4777c8a60bc855beb28bb9aa70"><td class="mdescLeft">&#160;</td><td class="mdescRight">離床判定後，燃焼中と判断し開放判定を行わない時間[ms] <br /></td></tr>
+<tr class="separator:a79e93f4777c8a60bc855beb28bb9aa70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a353894017426e0415404a33b98c70ffc"><td class="memItemLeft" align="right" valign="top"><a id="a353894017426e0415404a33b98c70ffc"></a>
+uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a353894017426e0415404a33b98c70ffc">open_threshold_time_ms</a> = 17000</td></tr>
+<tr class="memdesc:a353894017426e0415404a33b98c70ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放機構の動作にかかる時間を引いた，離床から開放までの時間のシム値[ms]の初期値 <br /></td></tr>
+<tr class="separator:a353894017426e0415404a33b98c70ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf15d0f3a16b705b44320300eff0e70d"><td class="memItemLeft" align="right" valign="top"><a id="adf15d0f3a16b705b44320300eff0e70d"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>fm_lift_off_threshold_altitude_m</b> = 1.0</td></tr>
 <tr class="separator:adf15d0f3a16b705b44320300eff0e70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -219,7 +227,7 @@ float&#160;</td><td class="memItemRight" valign="bottom"><b>fm_lift_off_threshol
 int&#160;</td><td class="memItemRight" valign="bottom"><b>fm_ALT_oversampling_count</b> = 1</td></tr>
 <tr class="separator:ac200f1f4d41a53921892a9ca8e2dd030"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52cac916910deb4c7b092b9bb0e3b024"><td class="memItemLeft" align="right" valign="top"><a id="a52cac916910deb4c7b092b9bb0e3b024"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>fm_ALT_threshold_count</b> = <a class="el" href="classOPENER.html#a5c5093a41b33b31cbda1213f9d3e67f7">ACC_threshold_count</a></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>fm_ALT_threshold_count</b> = <a class="el" href="classOPENER.html#a414cb05db26afa35069568632edf12ae">ACC_threshold_count</a></td></tr>
 <tr class="separator:a52cac916910deb4c7b092b9bb0e3b024"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63b50138e908a3410b867b6cf3cf0092"><td class="memItemLeft" align="right" valign="top"><a id="a63b50138e908a3410b867b6cf3cf0092"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>shinsasyo_lift_off_threshold_altitude_m</b> = 0.5</td></tr>
@@ -233,14 +241,6 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>shinsasyo_ALT_oversamp
 <tr class="memitem:aeda6ab06f17bec3a2ea02b316fe72c04"><td class="memItemLeft" align="right" valign="top"><a id="aeda6ab06f17bec3a2ea02b316fe72c04"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>shinsasyo_ALT_threshold_count</b> = 2</td></tr>
 <tr class="separator:aeda6ab06f17bec3a2ea02b316fe72c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3627813a1cda556ef6e264e08af638cd"><td class="memItemLeft" align="right" valign="top"><a id="a3627813a1cda556ef6e264e08af638cd"></a>
-const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a3627813a1cda556ef6e264e08af638cd">meco_threshold_time_ms</a> = 10000</td></tr>
-<tr class="memdesc:a3627813a1cda556ef6e264e08af638cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">離床判定後，燃焼中と判断し開放判定を行わない時間[ms] <br /></td></tr>
-<tr class="separator:a3627813a1cda556ef6e264e08af638cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353894017426e0415404a33b98c70ffc"><td class="memItemLeft" align="right" valign="top"><a id="a353894017426e0415404a33b98c70ffc"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOPENER.html#a353894017426e0415404a33b98c70ffc">open_threshold_time_ms</a> = 19000</td></tr>
-<tr class="memdesc:a353894017426e0415404a33b98c70ffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放機構の動作にかかる時間を引いた，離床から開放までの時間のシム値[ms]の初期値 <br /></td></tr>
-<tr class="separator:a353894017426e0415404a33b98c70ffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ハイブリッドロケットの開放機構の制御を行うクラス </p>
@@ -311,39 +311,6 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 
 </div>
 </div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a348bdfb2b4869977bfcbcbf77844b732"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a348bdfb2b4869977bfcbcbf77844b732">&#9670;&nbsp;</a></span>OPENER()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">OPENER::OPENER </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classOPENER.html#ad9bdea1dc929cd5b1b370ae8e75fd644">SETTING</a>&#160;</td>
-          <td class="paramname"><em>_setting</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>OPENERのコンストラクタ </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">_setting</td><td>閾値をフライト用に設定するか，審査書用に設定するか </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aabf402e278ba86c79293494afd377632"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aabf402e278ba86c79293494afd377632">&#9670;&nbsp;</a></span>get_meco_time_ms()</h2>
@@ -382,6 +349,24 @@ uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="
 
 <p>開放までのタイマーの秒数を取得する． </p>
 <dl class="section return"><dt>Returns</dt><dd>開放機構の動作にかかる時間を引いた，離床から開放までの時間のシム値[ms] </dd></dl>
+
+</div>
+</div>
+<a id="a088850cc122f7f630c3066eecc4a2e21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a088850cc122f7f630c3066eecc4a2e21">&#9670;&nbsp;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void OPENER::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>初期化（myOpenerクラスでオーバーライドするときは必ず <a class="el" href="classOPENER.html#a088850cc122f7f630c3066eecc4a2e21">OPENER::init()</a> を呼び出すこと） myOpenerでハードウェアの初期化をしたあと，OPENERで状態を初期化して閉鎖するため </p>
 
 </div>
 </div>
