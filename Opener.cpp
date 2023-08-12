@@ -33,6 +33,24 @@ float get_median(int n, float a[])
     }
 }
 
+void OPENER::switch_parameter(SETTING setting)
+{
+    if (setting == FM)
+    {
+        lift_off_threshold_altitude_m = fm_lift_off_threshold_altitude_m;
+        lift_off_threshold_ac_mss = fm_lift_off_threshold_ac_mss;
+        ALT_oversampling_count = fm_ALT_oversampling_count;
+        ALT_threshold_count = fm_ALT_threshold_count;
+    }
+    else if (setting == SHINSASYO)
+    {
+        lift_off_threshold_altitude_m = shinsasyo_lift_off_threshold_altitude_m;
+        lift_off_threshold_ac_mss = shinsasyo_lift_off_threshold_ac_mss;
+        ALT_oversampling_count = shinsasyo_ALT_oversampling_count;
+        ALT_threshold_count = shinsasyo_ALT_threshold_count;
+    }
+}
+
 void OPENER::init()
 {
     goCHECK();
