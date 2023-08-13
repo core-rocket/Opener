@@ -87,9 +87,9 @@ protected:
     int flight_judgement_duration_ms = ACC_threshold_count * 100;
 
     //! 離床判定後，燃焼中と判断し開放判定を行わない時間[ms]
-    uint32_t meco_threshold_time_ms = 12000;
+    uint32_t meco_threshold_time_ms = 5000;
     //! 開放機構の動作にかかる時間を引いた，離床から開放までの時間のシム値[ms]の初期値
-    uint32_t open_threshold_time_ms = 17000;
+    uint32_t open_threshold_time_ms = 11000;
 
     float fm_lift_off_threshold_altitude_m = 1.0;
     float fm_lift_off_threshold_ac_mss = 25.0;
